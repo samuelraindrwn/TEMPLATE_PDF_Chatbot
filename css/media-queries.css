@@ -1,0 +1,64 @@
+@media (max-width: 768px) {
+  main {
+    flex-direction: column-reverse;
+  }
+
+  .chat-container,
+  .pdf-container {
+    height: 50%;
+    width: 100%;
+  }
+
+  .pdf-container header {
+    padding: 30px 20px;
+  }
+
+  .chat-container {
+    margin-top: 0;
+  }
+
+  .chat-wrapper {
+    margin-top: 5px;
+    padding-top: 0px;
+  }
+
+  .bubble-chat h1 {
+    font-size: 0.875em;
+  }
+
+  .bubble-chat p {
+    font-size: 0.75em;
+  }
+
+  .show-pdf-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --icon-size: 0.75em;
+  }
+  .page-num,
+  #max-page-num {
+    font-size: 0.825em;
+  }
+
+  .page-num {
+    padding: 1.5px;
+    padding-left: 5px;
+    width: 20px;
+  }
+
+  #max-page-num {
+    padding-left: 0px;
+  }
+  .zoom-controller span {
+    width: 20px;
+  }
+
+  .input-wrapper textarea {
+    font-size: 0.685em;
+  }
+}

@@ -1,0 +1,589 @@
+/* CSS Reset */
+
+* {
+  padding: 0px;
+  margin: 0px;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Root */
+
+:root {
+  /* Color */
+  --white: #ffffff;
+  --black: #000000;
+  --scnd-clr: #7a8dbb;
+  --viewer-background: #f0f0f0;
+  --chat-background: #eef0fb;
+  --chat-btn-hover: #d6dcff;
+  --warning-text-clr: rgb(255, 0, 0);
+  --pdf-controller-hover-clr: #6f86bd;
+
+  /* Box Shadow */
+  --header-shadow: 0px 5px 5px 0px rgba(71, 71, 71, 0.263);
+  --chat-section-shadow: 0px 10px 15px 0px rgba(101, 101, 101, 0.208);
+  --suggestion-shadow: 0px 10px 10px 0px rgba(72, 72, 72, 0.288);
+  --pdf-shadow: 0px 5px 5px 0px rgba(71, 71, 71, 0.263);
+
+  /* Icon Size */
+  --icon-size: 1em;
+}
+
+/* body Styling */
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--chat-background);
+}
+
+/* Remove the scroll bar */
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  color: transparent;
+}
+
+.pdf-container,
+main,
+.chat-container .input-wrapper textarea {
+  overflow: hidden;
+}
+
+.recommendation-modal,
+.chat-wrapper {
+  /* remove scroll from firefox */
+  scrollbar-color: transparent transparent;
+}
+
+/* Icon Styling */
+
+/* give the secondary color to all icon in the input wrapper */
+.chat-container .input-wrapper svg path {
+  fill: var(--scnd-clr);
+}
+
+/* give the white color to all icon in the pdf header */
+.pdf-container header svg path {
+  fill: var(--white);
+}
+
+/* increase thickness for the icon */
+.pdf-container header .page-controller svg path {
+  stroke: var(--white);
+  stroke-width: 1.5;
+}
+
+.show-pdf-btn svg path {
+  stroke: var(--scnd-clr);
+  stroke-width: 10;
+}
+
+#up-page {
+  transform: rotate(180deg);
+}
+
+svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+#hide-pdf-icon,
+.show-pdf-btn svg {
+  width: calc(var(--icon-size) + 0.125em);
+  height: calc(var(--icon-size) + 0.125em);
+}
+
+.burger-btn path {
+  stroke: var(--scnd-clr);
+  stroke-width: 2.5;
+}
+
+/* Header */
+
+header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-shadow: var(--header-shadow);
+  z-index: 9999;
+  background-color: var(--white);
+}
+
+.logo-wrapper h1 {
+  color: var(--scnd-clr);
+}
+
+header .back-btn button {
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: transparent;
+}
+
+header .back-btn button:hover {
+  transition: 0.3s ease;
+  background-color: var(--scnd-clr);
+  color: var(--white);
+}
+
+/* Main Styling */
+
+main {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* PDF Section Styling */
+
+.pdf-container {
+  height: 100%;
+  width: 50%;
+  background-color: var(--viewer-background);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* PDF Header Section */
+
+.pdf-container header {
+  background-color: var(--scnd-clr);
+  height: 50px;
+  border-bottom: 3px solid var(--scnd-clr);
+  padding: 40px 30px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/* pdf controller / pdf header */
+
+.page-controller,
+.zoom-controller {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Span Used to Icon Wrapper */
+.page-controller span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: 0.2s ease;
+  border: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* controller Hover styking */
+
+.page-controller span:hover,
+.zoom-controller span:hover {
+  background-color: var(--pdf-controller-hover-clr);
+}
+
+/* Style for max number page */
+.page-controller p {
+  height: 30px;
+  background-color: var(--white);
+  margin-left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* for input number page */
+.page-num {
+  width: 30px;
+  height: 30px;
+  background-color: var(--white);
+  border-radius: 5px 0px 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 5px;
+  /* used to removing the up and down btn on input type num */
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-size: 1em;
+}
+
+/* used removing the up and down btn on input type num */
+.page-num::-webkit-outer-spin-button,
+.page-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* right pdf header styling */
+/* Span Used to Icon Wrapper */
+.zoom-controller span {
+  color: var(--white);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* styling for zoom percentage */
+.val-zoom {
+  background-color: var(--white);
+  padding: 0px 5px;
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+}
+
+/* Chat section styling */
+.chat-container {
+  height: 100%;
+  width: 50%;
+  background-color: var(--chat-background);
+  display: flex;
+  flex-direction: column-reverse;
+  transition: 0.3s ease;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Styling for the bottom section of the container */
+.chat-container .input-wrapper {
+  width: 90%;
+  display: flex;
+  gap: 15px;
+  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px 0;
+  transition: 0.3s ease;
+}
+
+/* styling for the button */
+.burger-btn,
+.show-pdf-btn,
+.suggest-btn,
+.send-btn {
+  width: 45px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--scnd-clr);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Chat controller hover */
+.burger-btn:hover,
+.show-pdf-btn:hover,
+.suggest-btn:hover,
+.send-btn:hover {
+  background-color: var(--chat-btn-hover);
+}
+
+/* customize the send btn */
+.send-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 0px 10px 10px 0px;
+}
+
+/* styling for the textarea */
+.chat-container .input-wrapper textarea {
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  resize: none;
+  transition: 0.3s ease;
+  overflow: auto;
+}
+
+/* create transition and remove the place holder when focus */
+.chat-container .input-wrapper textarea:focus::-webkit-input-placeholder {
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+/* create transition and remove the place holder when focus */
+.chat-container .input-wrapper textarea:focus::-moz-placeholder {
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+/* create transition and remove the place holder when focus */
+.chat-container .input-wrapper textarea:focus:-ms-input-placeholder {
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+/* create transition and remove the place holder when focus */
+.chat-container .input-wrapper textarea:focus::-ms-input-placeholder {
+  -ms-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+/* create transition and remove the place holder when focus */
+.chat-container .input-wrapper textarea:focus::placeholder {
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+/* Create the box shadow */
+.burger-btn,
+.show-pdf-btn,
+.recommendation-modal,
+.suggest-btn,
+.bubble-chat,
+#warning-input,
+.input-wrapper textarea {
+  box-shadow: var(--chat-section-shadow);
+}
+
+.burger-btn,
+.show-pdf-btn {
+  display: none;
+}
+
+/* styling for the recomendation section modal */
+.recommendation-modal {
+  transition: 0.3s ease;
+  background-color: var(--white);
+  border-radius: 10px;
+  height: 350px;
+  width: 90%;
+  opacity: 1;
+  padding: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.recommendation-modal h2 {
+  font-size: 1.125em;
+}
+
+.suggestion-wrapper {
+  transition: 0.3s ease;
+  height: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: auto;
+  margin-top: 10px;
+}
+
+/* style for suggestion inside the recommendation */
+.suggestion {
+  color: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--scnd-clr);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 0.875em;
+  word-wrap: break-word;
+}
+
+.suggestion:hover {
+  padding: 13px;
+  box-shadow: var(--suggestion-shadow);
+}
+
+.recommendation-modal.off {
+  height: 0px;
+  padding: 0px;
+  margin: 0px;
+  opacity: 0;
+}
+
+/* stype for bubble chat wrapper */
+.chat-wrapper {
+  width: 90%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 30px;
+  z-index: 1;
+}
+
+/* bubble chat styling */
+.bubble-chat {
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 0px 10px 10px 20px;
+  padding: 20px;
+}
+
+.bubble-chat h1 {
+  font-size: 1em;
+}
+
+.bubble-chat p {
+  font-size: 0.875em;
+  margin: 5px 0px;
+  overflow: hidden; /* Menyembunyikan konten yang melebihi ukuran elemen */
+  word-wrap: break-word; /* Memecah kata jika melebihi lebar elemen */
+}
+
+.bot-bubble-icon {
+  display: flex;
+  gap: 5px;
+}
+
+/* user bubble chat styling */
+
+.bubble-chat.user {
+  background-color: var(--white);
+}
+
+/* bot bubble chat styling */
+
+.bubble-chat.bot {
+  background-color: var(--scnd-clr);
+  color: var(--white);
+}
+
+.citation-wrapper {
+  margin-top: 15px;
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.citation-wrapper .citation {
+  background-color: var(--white);
+  color: var(--scnd-clr);
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-size: 0.875em;
+  min-width: 50px;
+  text-decoration: none;
+}
+
+/* Warning Pop up Styling */
+
+.input-wrapper #warning-input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -50px;
+  background-color: var(--white);
+  padding: 10px 15px;
+  border-radius: 50px;
+  width: 70%;
+  text-align: center;
+  color: var(--warning-text-clr);
+  z-index: -1;
+  opacity: 0;
+}
+
+/* Warning Pop up Styling When activated */
+
+.input-wrapper #warning-input.active {
+  -webkit-animation: shake 0.3s forwards;
+  animation: shake 0.3s forwards;
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Shake Animation for the warning pop up */
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-50%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-49%);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-51%);
+  }
+}
+
+/* Shake Animation for the warning pop up */
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-50%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-49%);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-51%);
+  }
+}
+
+/* canvas / PDF Pages styling */
+
+.pdf {
+  margin-bottom: 20px;
+  box-shadow: var(--pdf-shadow);
+  width: 75%;
+}
+
+/* PDF wrapper styling */
+
+.pdf-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+  transition: 0.3 ease;
+}

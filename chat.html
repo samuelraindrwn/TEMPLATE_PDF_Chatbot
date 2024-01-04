@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-queries.css" />
+
+    <!-- Jquery Library-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="script/lib/jquery-3.7.1.min.js"
+      type="text/javascript"
+    ></script>
+
+    <!-- PDF.JS Library -->
+
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.7.570/build/pdf.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+
+    <script src="script/lib/pdf.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header>
+      <div class="logo-wrapper"><h1>Logo</h1></div>
+      <a class="back-btn" href="index.html" title="Go to Dashboard"
+        ><button>Go to Dashboard</button></a
+      >
+    </header>
+
+    <!-- Main content -->
+    <main>
+
+      <!-- Chat Section -->
+      <div class="chat-container">
+        <form class="input-wrapper" action="">
+
+          <span title="More Option" id="burger-btn" class="burger-btn">
+            <svg viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 18H10" stroke-linecap="round"/>
+              <path d="M4 12L16 12" stroke-linecap="round"/>
+              <path d="M4 6L20 6" stroke-linecap="round"/>
+              </svg>
+          </span>
+
+          <span title="Show PDF" id="visibility-show" class="show-pdf-btn">
+
+            <!-- SVG Eye Icon -->
+            <svg viewBox="0 0 442.04 442.04">
+             <path d="M221.02,341.304c-49.708,0-103.206-19.44-154.71-56.22C27.808,257.59,4.044,230.351,3.051,229.203
+               c-4.068-4.697-4.068-11.669,0-16.367c0.993-1.146,24.756-28.387,63.259-55.881c51.505-36.777,105.003-56.219,154.71-56.219
+               c49.708,0,103.207,19.441,154.71,56.219c38.502,27.494,62.266,54.734,63.259,55.881c4.068,4.697,4.068,11.669,0,16.367
+               c-0.993,1.146-24.756,28.387-63.259,55.881C324.227,321.863,270.729,341.304,221.02,341.304z M29.638,221.021
+               c9.61,9.799,27.747,27.03,51.694,44.071c32.83,23.361,83.714,51.212,139.688,51.212s106.859-27.851,139.688-51.212
+               c23.944-17.038,42.082-34.271,51.694-44.071c-9.609-9.799-27.747-27.03-51.694-44.071
+               c-32.829-23.362-83.714-51.212-139.688-51.212s-106.858,27.85-139.688,51.212C57.388,193.988,39.25,211.219,29.638,221.021z"/>
+             <path d="M221.02,298.521c-42.734,0-77.5-34.767-77.5-77.5c0-42.733,34.766-77.5,77.5-77.5c18.794,0,36.924,6.814,51.048,19.188
+               c5.193,4.549,5.715,12.446,1.166,17.639c-4.549,5.193-12.447,5.714-17.639,1.166c-9.564-8.379-21.844-12.993-34.576-12.993
+               c-28.949,0-52.5,23.552-52.5,52.5s23.551,52.5,52.5,52.5c28.95,0,52.5-23.552,52.5-52.5c0-6.903,5.597-12.5,12.5-12.5
+               s12.5,5.597,12.5,12.5C298.521,263.754,263.754,298.521,221.02,298.521z"/>
+             <path d="M221.02,246.021c-13.785,0-25-11.215-25-25s11.215-25,25-25c13.786,0,25,11.215,25,25S234.806,246.021,221.02,246.021z"/>
+            </svg>
+          </span>
+          <span title="Suggestion" class="suggest-btn">
+
+            <!-- SVG Magic Wand Icon -->
+            <svg id="suggest-icon" viewBox="0 0 24 24" >
+              <path d="m18 9.064a3.049 3.049 0 0 0 -.9-2.164 3.139 3.139 0 0 0 -4.334 0l-11.866 11.869a3.064 3.064 0 0 0 4.33 4.331l11.87-11.869a3.047 3.047 0 0 0 .9-2.167zm-14.184 12.624a1.087 1.087 0 0 1 -1.5 0 1.062 1.062 0 0 1 0-1.5l7.769-7.77 1.505 1.505zm11.872-11.872-2.688 2.689-1.5-1.505 2.689-2.688a1.063 1.063 0 1 1 1.5 1.5zm-10.825-6.961 1.55-.442.442-1.55a1.191 1.191 0 0 1 2.29 0l.442 1.55 1.55.442a1.191 1.191 0 0 1 0 2.29l-1.55.442-.442 1.55a1.191 1.191 0 0 1 -2.29 0l-.442-1.55-1.55-.442a1.191 1.191 0 0 1 0-2.29zm18.274 14.29-1.55.442-.442 1.55a1.191 1.191 0 0 1 -2.29 0l-.442-1.55-1.55-.442a1.191 1.191 0 0 1 0-2.29l1.55-.442.442-1.55a1.191 1.191 0 0 1 2.29 0l.442 1.55 1.55.442a1.191 1.191 0 0 1 0 2.29zm-5.382-14.645 1.356-.387.389-1.358a1.042 1.042 0 0 1 2 0l.387 1.356 1.356.387a1.042 1.042 0 0 1 0 2l-1.356.387-.387 1.359a1.042 1.042 0 0 1 -2 0l-.387-1.355-1.358-.389a1.042 1.042 0 0 1 0-2z"/>
+            </svg>
+          </span>
+          <textarea spellcheck="false" rows="1" title="Ask Anything (Max 1.000 Characters)" placeholder="Ask Anything (Max 1.000 Characters)"></textarea>
+          <span title="Send" class="send-btn">
+
+            <!-- SVG Paper Plane Icon -->
+            <svg id="send-icon" viewBox="0 0 24 24" >
+              <path d="M1.444,6.669a2,2,0,0,0-.865,3.337l3.412,3.408V20h6.593l3.435,3.43a1.987,1.987,0,0,0,1.408.588,2.034,2.034,0,0,0,.51-.066,1.978,1.978,0,0,0,1.42-1.379L23.991.021ZM2,8.592l17.028-5.02L5.993,16.586v-4Zm13.44,13.424L11.413,18h-4L20.446,4.978Z"/>
+            </svg>
+          </span>
+        </form>
+
+        <!-- recommendation modal -->
+        <div class="recommendation-modal">
+          <h2>Try This ✨</h2>
+          <div class="suggestion-wrapper">
+            <span class="suggestion">Summarize The PDF</span>
+            <span class="suggestion">What is the abstract?</span>
+            <span class="suggestion">What is the title?</span>
+            <span class="suggestion">How many characters are there?</span>
+            <span class="suggestion">Thank You</span>
+            <span class="suggestion">I Love You</span>
+          </div>
+        </div>
+
+        <!-- chat section -->
+        <div class="chat-wrapper">
+
+          <div class="bubble-chat bot">
+            <h1>AI Assistant</h1>
+            <p>
+              Hello AI Assistan is here, What can i help you? 😊
+            </p>
+          </div>
+
+          <!-- Removeable -->
+          <div class="bubble-chat user">
+            <h1>You</h1>
+            <p>
+              awdawdawdawdawdawd
+            </p>
+          </div>
+
+          <div class="bubble-chat bot">
+            <h1>AI Assistant</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque doloribus totam laudantium labore quae sit quas veritatis dicta hic! Odit perferendis ea, beatae accusantium amet saepe. Sint quas eum est!
+            </p>
+            <div class="citation-wrapper">
+              <a href="#1" class="citation">Page. 1</a>
+              <a href="#2" class="citation">Page. 2</a>
+              <a href="#10" class="citation">Page. 10</a>
+              <a href="#21" class="citation">Page. 21</a>
+              <a href="#3" class="citation">Page. 3</a>
+              <a href="#22" class="citation">Page. 22</a>
+              <a href="#11" class="citation">Page. 11</a>
+              <a href="#27" class="citation">Page. 27</a>
+              <a href="#5" class="citation">Page. 5</a>
+              <a href="#17" class="citation">Page. 17</a>
+              <a href="#14" class="citation">Page. 14</a>
+              <a href="#21" class="citation">Page. 21</a>
+            </div>
+          </div>
+          <!-- Removeable -->
+
+        </div>
+      </div>
+
+      <!-- PDF Section -->
+      <div id="pdf-container" class="pdf-container">
+        
+        <!-- PDF Controller / Header -->
+        <header>
+
+          <!-- Page Up and Down -->
+          <div class="page-controller">
+            <span title="Page Up" id="up-page">
+
+              <!-- SVG Chevron Up Icon -->
+              <svg viewBox="0 0 20 20" id="page-up-icon">
+                <path
+                  d="M17.418 6.109a.697.697 0 0 1 .979 0 .68.68 0 0 1 0 .969l-7.908 7.83a.697.697 0 0 1-.979 0l-7.908-7.83a.68.68 0 0 1 0-.969.697.697 0 0 1 .979 0L10 13.25l7.418-7.141z"
+                ></path>
+              </svg>
+            </span>
+            <input type="number" min="1" value="1" title="Page" id="curr-page" class="page-num"></input>
+            <p id="max-page-num"></p>
+            <span title="Page Down" id="down-page">
+
+              <!-- SVG Chevron Down Icon -->
+              <svg viewBox="0 0 20 20" id="page-down-icon">
+                <path
+                  d="M17.418 6.109a.697.697 0 0 1 .979 0 .68.68 0 0 1 0 .969l-7.908 7.83a.697.697 0 0 1-.979 0l-7.908-7.83a.68.68 0 0 1 0-.969.697.697 0 0 1 .979 0L10 13.25l7.418-7.141z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+
+          <!-- Zoom Controller & Visibility -->
+          <div class="zoom-controller">
+            <span title="hide" id="visibility-hide">
+
+              <!-- SVG Eye Crossed Icon -->
+              <svg id="hide-pdf-icon" viewBox="0 0 24 24" >
+                <path d="M23.271,9.419A15.866,15.866,0,0,0,19.9,5.51l2.8-2.8a1,1,0,0,0-1.414-1.414L18.241,4.345A12.054,12.054,0,0,0,12,2.655C5.809,2.655,2.281,6.893.729,9.419a4.908,4.908,0,0,0,0,5.162A15.866,15.866,0,0,0,4.1,18.49l-2.8,2.8a1,1,0,1,0,1.414,1.414l3.052-3.052A12.054,12.054,0,0,0,12,21.345c6.191,0,9.719-4.238,11.271-6.764A4.908,4.908,0,0,0,23.271,9.419ZM2.433,13.534a2.918,2.918,0,0,1,0-3.068C3.767,8.3,6.782,4.655,12,4.655A10.1,10.1,0,0,1,16.766,5.82L14.753,7.833a4.992,4.992,0,0,0-6.92,6.92l-2.31,2.31A13.723,13.723,0,0,1,2.433,13.534ZM15,12a3,3,0,0,1-3,3,2.951,2.951,0,0,1-1.285-.3L14.7,10.715A2.951,2.951,0,0,1,15,12ZM9,12a3,3,0,0,1,3-3,2.951,2.951,0,0,1,1.285.3L9.3,13.285A2.951,2.951,0,0,1,9,12Zm12.567,1.534C20.233,15.7,17.218,19.345,12,19.345A10.1,10.1,0,0,1,7.234,18.18l2.013-2.013a4.992,4.992,0,0,0,6.92-6.92l2.31-2.31a13.723,13.723,0,0,1,3.09,3.529A2.918,2.918,0,0,1,21.567,13.534Z"/>
+              </svg>
+            </span>
+            <span title="zoom out" id="zoom-out">
+
+              <!-- SVG Magnifiying Glass Minus Icon -->
+              <svg id="zoom-out-icon" viewBox="0 0 24 24">
+                <path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z" />
+                <path d="M13,9H7a1,1,0,0,0,0,2h6a1,1,0,0,0,0-2Z"/>
+              </svg>              
+            </span>
+            <p id="val-zoom" class="val-zoom"></p>
+            <span title="zoom in" id="zoom-in">
+
+              <!-- SVG Magnifiying Glass Plus Icon -->
+              <svg id="zoom-out-in" viewBox="0 0 24 24">
+                <path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z" />
+                <path d="M13,9H11V7A1,1,0,0,0,9,7V9H7a1,1,0,0,0,0,2H9v2a1,1,0,0,0,2,0V11h2a1,1,0,0,0,0-2Z" />
+              </svg>
+            </span>
+          </div>
+        </header>
+        <!-- PDF WRAPPER -->
+        <div class="pdf-wrapper"></div>
+      </div>
+    
+
+    </main>
+
+    <!-- Javascript -->
+    <script src="script/main.js" type="text/javascript"></script>
+  </body>
+</html>
